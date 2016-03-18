@@ -1,0 +1,13 @@
+parameters:
+    # Database
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_name: unicornum_metalum
+    database_user: root
+    database_password: ~
+
+    # Misc
+    locale: fr
+    secret: 288d41f8f200b80a4d8cfc9e6027628cd294fc2d
+    http_protocol: http
