@@ -1,0 +1,30 @@
+parameters:
+    fos_user.user_class: Application\Sonata\UserBundle\Entity\User
+    fos_user.group.group_class: Application\Sonata\UserBundle\Entity\Group
+
+
+#
+# FOSUserBundle with SonataUserBundle
+# see: http://sonata-project.org/bundles/user/master/doc/index.html
+# see: https://github.com/FriendsOfSymfony/FOSUserBundle/tree/master/Resources/doc
+#
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: %fos_user.user_class%
+    from_email:
+        address: no-reply@unicornum-metalum.com
+        sender_name: Unicornum metalum
+    group:
+        group_class: %fos_user.group.group_class%
+        group_manager: sonata.user.orm.group_manager
+    service:
+        mailer: fos_user.mailer.twig_swift    
+    registration:
+        confirmation:
+            enabled: true
+ #           template: ApplicationSonataUserBundle:emails:registration.email.html.twig
+        form:
+    resetting:
+        email:
+            template: ApplicationSonataUserBundle:emails:resetting.email.html.twig   

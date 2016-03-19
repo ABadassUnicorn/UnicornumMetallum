@@ -1,0 +1,7 @@
+parameters:
+#    unicornum_metalum_entity.example.class: UnicornumMetalum\EntityBundle\Example
+
+services:
+#    unicornum_metalum_entity.example:
+#        class: %unicornum_metalum_entity.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

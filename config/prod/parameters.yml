@@ -1,0 +1,19 @@
+parameters:
+    app_version: 1.0.0
+    
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_path: null
+    database_name: unicornum-metalum
+    database_user: root
+    database_password: ~
+    # Misc
+    locale: fr
+    secret: ff09774385b310b510d90628b062464d1b
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_encryption: ssl
+    mailer_port:       ~
+    mailer_user:       ~
+    mailer_password:   ~

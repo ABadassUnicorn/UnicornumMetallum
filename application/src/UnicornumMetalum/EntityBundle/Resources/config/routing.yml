@@ -1,0 +1,3 @@
+unicornum_metalum_entity_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: UnicornumMetalumEntityBundle:Default:index }

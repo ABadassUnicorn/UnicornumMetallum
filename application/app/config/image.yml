@@ -1,0 +1,16 @@
+#
+# avalanche_imagine
+# see https://github.com/avalanche123/AvalancheImagineBundle
+#
+
+avalanche_imagine:
+    filters:
+        miniature:
+            type:    thumbnail
+            options: {size: [196, 47], mode: inset, quality: 100, format: png}
+        miniature2:
+            type:    thumbnail
+            options: {size: [170, 40], mode: inset, quality: 100, format: png}
+        resize_jeu1:
+            type:    relative_resize
+            options: { widen: 320 }

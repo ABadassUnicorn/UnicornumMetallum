@@ -1,7 +1,9 @@
 # This file is a "template" of what your parameters.yml file should look like
-# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
-# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 parameters:
+    app:
+        version: 1.0.0
+
+    database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
     database_name:     symfony
@@ -12,8 +14,16 @@ parameters:
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
+    mailer_port:       ~
+    mailer_encryption: null
     mailer_user:       ~
     mailer_password:   ~
 
+    locale:            en
+
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    router.request_context.host: www.lacourseavantlacourse.com
+    router.request_context.scheme: http
+    router.request_context.base_url: 

@@ -1,0 +1,46 @@
+#
+# SonataAdmin
+# see http://sonata-project.org/bundles/admin/2-1/doc/reference/configuration.html
+#
+sonata_admin:
+    title:      Unicornum Metalum
+#    title_logo: /bundles/freehandisetrophycacadmin/images/logo_bo.png
+    templates:
+#        dashboard: FreeHandiseTrophyCacAdminBundle:Core:dashboard.html.twig
+#        layout: FreeHandiseTrophyCacAdminBundle::standard_layout.html.twig
+        
+    
+
+#
+# Sonatablock
+# see: http://sonata-project.org/block/user/master/doc/index.html
+#
+sonata_block:
+    default_contexts: [admin]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+        sonata.block.service.text:
+            contexts: [admin]
+        sonata.admin.block.search_result:
+            contexts: [admin]
+            
+#
+# SonataUserBundle
+# see: http://sonata-project.org/bundles/user/master/doc/index.html
+#
+sonata_user:
+    security_acl: false
+    manager_type: orm
+
+    class:                  # Entity Classes
+        user:               %fos_user.user_class%
+        group:              %fos_user.group.group_class%
+        
+        
+    admin:                  # Admin Classes
+        user:
+            class:          Application\Sonata\UserBundle\Admin\Model\UserAdmin
+
+        group:
+            class:          Application\Sonata\UserBundle\Admin\Model\GroupAdmin
