@@ -7,8 +7,8 @@ unicornum_metalum_entity:
     prefix:   /
 
 unicornum_metalum_front:
-    resource: "@UnicornumMetalumFrontBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: "@UnicornumMetalumFrontBundle/Controller"
+    type:     annotation
 
 unicornum_metalum_admin:
     resource: "@UnicornumMetalumAdminBundle/Resources/config/routing.yml"

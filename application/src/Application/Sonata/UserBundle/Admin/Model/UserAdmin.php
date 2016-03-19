@@ -21,30 +21,6 @@ use Sonata\AdminBundle\Route\RouteCollection;
 
 class UserAdmin extends Admin {
 
-    protected function configureRoutes(RouteCollection $collection) {
-        $collection->remove('show');
-    }
-
-    public function getExportFormats() {
-        return array('xls', 'csv');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getFormBuilder() {
-        $this->formOptions['data_class'] = $this->getClass();
-
-        $options = $this->formOptions;
-        $options['validation_groups'] = (!$this->getSubject() || is_null($this->getSubject()->getId())) ? 'Registration' : 'Profile';
-
-        $formBuilder = $this->getFormContractor()->getFormBuilder($this->getUniqid(), $options);
-
-        $this->defineFormBuilder($formBuilder);
-
-        return $formBuilder;
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -56,7 +32,6 @@ class UserAdmin extends Admin {
                     'format' => 'd-m-Y H:i:s'))
                 ->addIdentifier('fullname', 'string', array(
                     'label' => 'Nom et Prénom',
-                    'template' => 'FreeHandiseTrophyCacAdminBundle:Admin:nom_utilisateur.html.twig'
                 ))
                 ->add('profil', null, array('label' => 'Profil'))
         ;
