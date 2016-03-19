@@ -20,7 +20,6 @@
 /bin/*
 !bin/console
 !bin/symfony_requirements
-/vendor/
 
 # Assets and user uploads
 /web/bundles/
@@ -37,5 +36,9 @@
 /build/
 
 # Composer PHAR
-/composer.phar
+/application/composer.phar
 /nbproject/private/
+/application/vendor/
+/application/app/cache/
+/application/app/logs/
+/application/web/bundles/
