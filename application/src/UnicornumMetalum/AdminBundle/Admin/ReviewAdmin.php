@@ -55,7 +55,7 @@ class ReviewAdmin extends Admin
         $formMapper
             ->add('name')
             ->add('review')
-            ->add('date')
+            ->add('date', 'date', array('disabled' => true))
             ->add('category')
             ->add('tags', 'sonata_type_model', array('multiple' => true, 'by_reference' => false))
             ->add('author')

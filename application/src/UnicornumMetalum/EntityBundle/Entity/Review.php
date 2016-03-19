@@ -120,7 +120,7 @@ class Review
     public function __construct()
     {
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->setDate(new DateTime('now'));
+        $this->setDate(new \DateTime('now'));
     }
 
     /**
