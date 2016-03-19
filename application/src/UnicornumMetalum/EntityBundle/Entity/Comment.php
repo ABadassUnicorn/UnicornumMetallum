@@ -33,6 +33,12 @@ class Comment
      * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
      */
     private $author;
+        
+    /**
+     * @ORM\ManyToOne(targetEntity="Review")
+     * @ORM\JoinColumn(name="review_id", referencedColumnName="id")
+     */
+    private $review;
     
     /**
      * Get id
@@ -88,5 +94,28 @@ class Comment
     public function getAuthor()
     {
         return $this->author;
+    }
+
+    /**
+     * Set review
+     *
+     * @param \UnicornumMetalum\EntityBundle\Entity\Review $review
+     * @return Comment
+     */
+    public function setReview(\UnicornumMetalum\EntityBundle\Entity\Review $review = null)
+    {
+        $this->review = $review;
+
+        return $this;
+    }
+
+    /**
+     * Get review
+     *
+     * @return \UnicornumMetalum\EntityBundle\Entity\Review 
+     */
+    public function getReview()
+    {
+        return $this->review;
     }
 }

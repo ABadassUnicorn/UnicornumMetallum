@@ -20,6 +20,13 @@ class Review
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
 
     /**
      * @var string
@@ -45,6 +52,13 @@ class Review
      */
     private $author;
     
+    /**
+    * @var date $birthday
+    *
+    * @ORM\Column(name="date", type="date", nullable=true)
+    */
+    private $date;
+
     /**
      * Get id
      *
@@ -106,6 +120,7 @@ class Review
     public function __construct()
     {
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->setDate(new DateTime('now'));
     }
 
     /**
@@ -147,7 +162,7 @@ class Review
      * @param \UnicornumMetalum\EntityBundle\Entity\User $author
      * @return Review
      */
-    public function setAuthor(\UnicornumMetalum\EntityBundle\Entity\User $author = null)
+    public function setAuthor(\Application\Sonata\UserBundle\Entity\User $author = null)
     {
         $this->author = $author;
 
@@ -162,5 +177,61 @@ class Review
     public function getAuthor()
     {
         return $this->author;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Review
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function __toString()
+    {
+        return $this->name . ' - ' . $this->getAuthor() . ' - ' . $this->getDate()->format('Y-m-d');
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Review
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 }

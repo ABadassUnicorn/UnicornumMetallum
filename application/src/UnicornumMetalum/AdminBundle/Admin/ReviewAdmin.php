@@ -16,8 +16,12 @@ class ReviewAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
+            ->add('name')
             ->add('review')
+            ->add('date')
+            ->add('category')
+            ->add('tags')
+            ->add('author')
         ;
     }
 
@@ -27,8 +31,12 @@ class ReviewAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
+            ->add('name')
             ->add('review')
+            ->add('date')
+            ->add('category')
+            ->add('tags')
+            ->add('author')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -45,8 +53,12 @@ class ReviewAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
+            ->add('name')
             ->add('review')
+            ->add('date')
+            ->add('category')
+            ->add('tags', 'sonata_type_model', array('multiple' => true, 'by_reference' => false))
+            ->add('author')
         ;
     }
 
@@ -56,8 +68,12 @@ class ReviewAdmin extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('id')
+            ->add('name')
             ->add('review')
+            ->add('date')
+            ->add('category')
+            ->add('tags')
+            ->add('author')
         ;
     }
 }

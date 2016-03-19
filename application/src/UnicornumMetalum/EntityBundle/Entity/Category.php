@@ -61,4 +61,14 @@ class Category
     {
         return $this->name;
     }
+    
+    /**
+     * Get the string for this category
+     *
+     * @return string 
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
