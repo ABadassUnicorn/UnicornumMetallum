@@ -48,23 +48,6 @@ class UserAdmin extends Admin {
     /**
      * {@inheritdoc}
      */
-    public function getExportFields() {
-// avoid security field to be exported
-        /* return array_filter(parent::getExportFields(), function ($v) {
-          return !in_array($v, array('password', 'salt'));
-          }); */
-
-        return array(
-            'Inscription' => 'createdAt',
-            'Email' => 'email',
-            'Nom' => 'lastName',
-            'Prénom' => 'firstName',
-            'Profil' => 'profil',);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     protected function configureListFields(ListMapper $listMapper) {
         $listMapper
                 ->add('createdAt', 'date', array(

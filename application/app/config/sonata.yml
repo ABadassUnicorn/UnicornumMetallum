@@ -4,10 +4,7 @@
 #
 sonata_admin:
     title:      Unicornum Metalum
-#    title_logo: /bundles/freehandisetrophycacadmin/images/logo_bo.png
     templates:
-#        dashboard: FreeHandiseTrophyCacAdminBundle:Core:dashboard.html.twig
-#        layout: FreeHandiseTrophyCacAdminBundle::standard_layout.html.twig
         
     
 
@@ -36,11 +33,8 @@ sonata_user:
     class:                  # Entity Classes
         user:               %fos_user.user_class%
         group:              %fos_user.group.group_class%
-        
-        
     admin:                  # Admin Classes
         user:
             class:          Application\Sonata\UserBundle\Admin\Model\UserAdmin
-
         group:
             class:          Application\Sonata\UserBundle\Admin\Model\GroupAdmin

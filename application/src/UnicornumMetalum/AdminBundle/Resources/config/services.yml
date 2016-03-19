@@ -5,3 +5,8 @@ services:
 #    unicornum_metalum_admin.example:
 #        class: %unicornum_metalum_admin.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    unicornum_metalum_admin.admin.review:
+        class: UnicornumMetalum\AdminBundle\Admin\ReviewAdmin
+        arguments: [~, UnicornumMetalum\EntityBundle\Entity\Review, UnicornumMetalumAdminBundle:ReviewAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Review}
