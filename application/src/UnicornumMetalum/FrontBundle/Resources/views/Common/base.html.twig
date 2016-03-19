@@ -1,10 +1,29 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>{% block title %}{{ 'Unicornum Metalum' |trans }}{% endblock %}</title>
-    </head>
+<!DOCTYPE html>
+<html lang="fr" class="gt-ie8">
+	<head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title>{{ 'Unicornum Metalum' |trans }}{% block title %}{% endblock %}</title>
+            <meta name="robots" content="noindex, nofollow">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            {% stylesheets
+                    'bundles/unicornummetalumfront/bower_components/bootstrap/dist/css/bootstrap.min.css'
+                    'bundles/unicornummetalumfront/bower_components/font-awesome/css/font-awesome.min.css'
+                    filter='cssrewrite' %}
+                    <link rel="stylesheet" href="{{ asset_url }}">
+            {% endstylesheets %}
+            <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+            {% block additional_stylesheets %}{% endblock %}
+            <script src="{{ asset('bundles/unicornummetalumfront/bower_components/jquery/dist/jquery.min.js') }}"></script>
+            <script src="{{ asset('bundles/unicornummetalumfront/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+            {% block javascripts_head %}{% endblock %}
+            <link rel="icon" type="image/x-icon" href="{{ asset('bundles/unicornummetalumfront/images/favicon.ico') }}" />
+	</head>
     <body>
         {% block body %}{% endblock %}
+        {% javascripts %}
+            <script type="text/javascript" src="{{ asset_url }}?v{{ version }}"></script>
+        {% endjavascripts %}
+        {% block javascripts_body %}{% endblock %}
     </body>
 </html>
