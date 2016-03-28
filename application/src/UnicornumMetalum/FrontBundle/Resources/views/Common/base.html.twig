@@ -3,7 +3,7 @@
 	<head>
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <title>{{ 'Unicornum Metalum' |trans }}{% block title %}{% endblock %}</title>
+            <title>{{ 'base_page_title' |trans({}, 'messages') }}{% block title %}{% endblock %}</title>
             <meta name="robots" content="noindex, nofollow">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             {% stylesheets

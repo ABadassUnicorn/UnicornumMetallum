@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class AccueilController extends Controller
 {
     /**
-    * @Route("/accueil")
+    * @Route("/accueil", name="unicornum_metalum_home")
     */
     public function accueilAction()
     {

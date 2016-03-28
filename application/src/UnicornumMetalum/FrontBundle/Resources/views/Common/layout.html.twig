@@ -2,4 +2,52 @@
 
 {% block title %}{% endblock %}
 
-{% block body %}{% endblock %}
+{% block body %}
+    <header>
+        <div class="wrapper">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
+                            <i class="glyphicon glyphicon-menu-hamburger"></i>
+                        </button>
+                        <a class="navbar-brand" href="{{ path('unicornum_metalum_home') }}">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="main-menu">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <a href="{{ path('unicornum_metalum_home') }}">
+                                    <!--<i class="fa fa-dashboard mrxs"></i> example forthe use of icon-->{{ 'menu.home'|trans({}, 'messages') }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('unicornum_metalum_reviews') }}">
+                                    <!--<i class="fa fa-dashboard mrxs"></i> example forthe use of icon-->{{ 'menu.reviews'|trans({}, 'messages') }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('unicornum_metalum_research') }}">
+                                    <!--<i class="fa fa-dashboard mrxs"></i> example forthe use of icon-->{{ 'menu.research'|trans({}, 'messages') }}
+                                </a>
+                            </li>
+                            {% if app.user %}
+                                <!-- for the function that require connection use this block-->
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">           
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    <footer>
+        <div class="wrapper text-center">
+            <!-- legal mentions copyright and blablabla -->
+        </div>
+    </footer>
+{% endblock %}
