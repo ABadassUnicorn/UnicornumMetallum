@@ -14,4 +14,12 @@ class ReviewController extends Controller
     {
         return $this->render('UnicornumMetalumFrontBundle:Reviews:reviews.html.twig');
     }
+    
+    /**
+    * @Route("/write-review", name="unicornum_metalum_write_review")
+    */
+    public function writeReviewAction()
+    {
+        return $this->render('UnicornumMetalumFrontBundle:Reviews:write.html.twig');
+    }
 }
