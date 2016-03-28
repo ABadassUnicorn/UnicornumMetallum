@@ -1,4 +1,7 @@
 {% extends "UnicornumMetalumFrontBundle:Common:layout.html.twig" %}
 {% block title %}{{ 'menu.reviews'|trans({}, 'messages') }}{% endblock %}
 {% block content %}
+    <a href="{{ path('unicornum_metalum_read_review', {'reviewId': 1}) }}">
+        link to a review
+    </a>
 {% endblock %}

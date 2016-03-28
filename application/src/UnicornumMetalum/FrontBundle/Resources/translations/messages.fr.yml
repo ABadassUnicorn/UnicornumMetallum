@@ -4,3 +4,5 @@ menu:
     reviews: "Chroniques"
     research: "Recherche"
     write: "Rédacteur"
+review:
+    read: "Chronique "
