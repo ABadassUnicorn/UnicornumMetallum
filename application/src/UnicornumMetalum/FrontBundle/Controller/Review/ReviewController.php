@@ -5,6 +5,9 @@ namespace UnicornumMetalum\FrontBundle\Controller\Review;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use UnicornumMetalum\FrontBundle\Form\ReviewType;
+use UnicornumMetalum\EntityBundle\Entity\Review;
+use UnicornumMetalum\EntityBundle\Entity\Tag;
 
 class ReviewController extends Controller
 {
@@ -21,7 +24,16 @@ class ReviewController extends Controller
     */
     public function writeReviewAction(Request $request)
     {
-        return $this->render('UnicornumMetalumFrontBundle:Reviews:write.html.twig');
+        $em = $this->getDoctrine()->getEntityManager();
+        $review = new Review();
+        $form = $this->createForm(new ReviewType(), $review);
+        $form->handleRequest($request);
+        if($form->get('save')->isClicked()){
+            
+        }
+        return $this->render('UnicornumMetalumFrontBundle:Reviews:write.html.twig', array(
+            'form' => $form->createView()
+        ));
     }
     
     /**

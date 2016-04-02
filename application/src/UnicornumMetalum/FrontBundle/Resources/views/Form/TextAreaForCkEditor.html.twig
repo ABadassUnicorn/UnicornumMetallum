@@ -1,0 +1,11 @@
+{% form_theme form _self %}
+ 
+{% block textarea_widget %}
+    {% spaceless %}
+        <textarea name="editor1"
+        {{ block('widget_attributes') }}>{{ value }}</textarea>   
+        <script>
+            CKEDITOR.replace( 'editor1' );
+        </script>
+    {% endspaceless %}
+{% endblock textarea_widget %}{# empty Twig template #}
